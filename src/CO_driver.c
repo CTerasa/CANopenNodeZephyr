@@ -543,7 +543,7 @@ static int canopen_init(void)
 			   K_KERNEL_STACK_SIZEOF(canopen_tx_workq_stack),
 			   CONFIG_CANOPENNODE_TX_WORKQUEUE_PRIORITY, NULL);
 
-	k_thread_name_set(&canopen_tx_workq.thread, "canopen_tx_workq");
+	k_thread_name_set(canopen_tx_workq.thread_id, "canopen_tx_workq");
 
 	k_work_init(&canopen_tx_queue.work, canopen_tx_retry);
 
